@@ -20,30 +20,32 @@
       "email": "juan11@gmail.com",
       "password": "juan1",
       "role": "admin"
-    },
-    {
-      "userName": "mor2311",
-      "email": "dbx_22@gmail.com",
-      "password": "lopilato2311",
-      "id": 4
     }
   ],
   "destacados": [
     {
-      "title": "undefined",
-      "gen": "undefined",
-      "desc": "undefined",
-      "img": "undefined",
+      "title": "aaaaa",
+      "gen": "cscs",
+      "desc": "aaaaaaa",
+      "img": "https://www.themoviedb.org/t/p/original/qTkJ6kbTeSjqfHCFCmWnfWZJOtm.jpg",
       "peliKey": "2",
-      "id": 2
+      "id": 5
     },
     {
-      "title": "ddddd",
-      "gen": "dddd",
-      "desc": "ddddd",
-      "img": "dddd",
+      "title": "Garra",
+      "gen": "Drama",
+      "desc": "skamkcsam",
+      "img": "https://www.themoviedb.org/t/p/original/hGr0FrLI74vqpBWTBOPloDBwOAK.jpg",
+      "peliKey": "2",
+      "id": 6
+    },
+    {
+      "title": "Garra 2",
+      "gen": "Drama",
+      "desc": "sjcnjascnj",
+      "img": "https://www.themoviedb.org/t/p/original/hGr0FrLI74vqpBWTBOPloDBwOAK.jpg",
       "peliKey": "3",
-      "id": 3
+      "id": 7
     }
   ],
   "profile": {

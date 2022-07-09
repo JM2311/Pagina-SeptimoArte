@@ -5,11 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SEPTIMO ARTE</title>
-    <link
-      rel="shortcut icon"
-      href="../img/img-usuarios/"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../img/img-usuarios/" type="image/x-icon" />
     <script
       src="https://kit.fontawesome.com/822e20ead6.js"
       crossorigin="anonymous"
@@ -183,12 +179,10 @@
     <main>
       <div class="row g-0 my-5">
         <div class="col">
-          <h1 class="text-center text-light">
-            Administrar Usuarios
-          </h1>
+          <h1 class="text-center text-light">Administrar Usuarios</h1>
         </div>
       </div>
-      <div class="container">
+      <div class="table-responsive">
         <table class="table table-light">
           <thead>
             <tr>
@@ -200,7 +194,77 @@
             </tr>
           </thead>
           <tbody id="listaUsuarios"></tbody>
-          
+          <div
+            class="modal fade"
+            id="editModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Editar Usuarios
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <form id="formModal">
+                    <div class="mb-3">
+                      <label for="editUsuario" class="col-form-label fw-bold"
+                        >Usuario:</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="editUsuario"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="editEmail" class="col-form-label fw-bold"
+                        >Email:</label
+                      >
+                      <input type="email" class="form-control" id="editEmail" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="editPassword" class="col-form-label fw-bold"
+                        >Password:</label
+                      >
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="editPassword"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label fw-bold"
+                        >Role:</label
+                      >
+                      <input type="text" class="form-control" id="editRole" />
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Cerrar
+                  </button>
+                  <button type="button" class="btn btn-primary" id="editButton">
+                    Editar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </table>
       </div>
     </main>

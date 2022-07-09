@@ -14,7 +14,7 @@ window.addEventListener("scroll", () => {
 });
 
 const deleteItem = (id) => {
-  fetch(` http://localhost:3000/destacados/${id}`, {
+  fetch(` http://localhost:3000/users/${id}`, {
     method: "DELETE",
   });
 };
@@ -32,7 +32,9 @@ const editUser = (id) => {
     },
   });
 };
-
+const setEditModal = (id) => {
+  editButton.setAttribute("onclick", `editItem(${id})`);
+};
 const listaUsuarios = document.getElementById("listaUsuarios");
 fetch("http://localhost:3000/users")
   .then((response) => response.json())
@@ -48,97 +50,13 @@ fetch("http://localhost:3000/users")
             type="button"
             class="btn btn-success m-1"
             data-bs-toggle="modal"
+            data-bs-target="#editModal"
             data-bs-target="#exampleModalEdit"
             data-bs-whatever="@mdo"
+            onclick="editButton.setAttribute('onclick', 'editUser(${user.id})');"
           >
           <i class="bi bi-pencil"></i>
           </button>
-          <div
-            class="modal fade"
-            id="exampleModalEdit"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">
-                    Editar Usuarios
-                  </h5>
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body">
-                  <form id="formModal">
-                    <div class="mb-3">
-                      <label
-                        for="editUsuario"
-                        class="col-form-label fw-bold"
-                        >Usuario:</label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editUsuario"
-                      />
-                    </div>
-                    <div class="mb-3">
-                    <label
-                    for="editEmail"
-                    class="col-form-label fw-bold"
-                    >Email:</label
-                  >
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="editEmail"
-                  />
-                    </div>
-                    <div class="mb-3">
-                    <label
-                    for="editPassword"
-                    class="col-form-label fw-bold"
-                    >Password:</label
-                  >
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="editPassword"
-                  />
-                    </div>
-                    <div class="mb-3">
-                      <label for="message-text" class="col-form-label fw-bold"
-                        >Role:</label
-                      >
-                      <input type="text" class="form-control" id="editRole" />
-                    </div>
-                    
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                  >
-                    Cerrar
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-primary"
-                    onclick="editUser()"
-                  >
-                    Editar
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
       <button
           class="btn btn-danger m-1" onclick="deleteItem(${user.id})"
         ><i class="bi bi-archive"></i></button>
